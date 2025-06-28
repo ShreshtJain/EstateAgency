@@ -19,9 +19,9 @@ require '../assets/vendor/PHPMailer/SMTP.php';
 require '../assets/vendor/PHPMailer/Exception.php';
 
 // ✅ Set credentials
-$receiving_email_address = 'shreshtjain99@gmail.com';
-$smtp_username = 'shreshtjain99@gmail.com';
-$smtp_password = 'etnl yijj gzsn mpxe';
+$receiving_email_address = '';
+$smtp_username = '';
+$smtp_password = '';
 
 // ✅ Handle POST only
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
