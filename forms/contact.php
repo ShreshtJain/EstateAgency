@@ -7,7 +7,7 @@ error_reporting(0);
 ini_set('log_errors', '1');
 ini_set('error_log', __DIR__ . '/mail-errors.log');
 
-// 🔒 Start output buffering to suppress leaked warnings
+//Start output buffering to suppress leaked warnings
 ob_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
