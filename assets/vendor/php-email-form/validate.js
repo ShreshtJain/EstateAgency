@@ -9,22 +9,40 @@
   let forms = document.querySelectorAll('.php-email-form');
 
   forms.forEach(function (form) {
-    form.addEventListener('submit', function () {
-      // Show loader and reset messages on submit
-      form.querySelector('.loading').classList.add('d-block');
-      form.querySelector('.error-message').classList.remove('d-block');
-      form.querySelector('.sent-message').classList.remove('d-block');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const loading = form.querySelector('.loading');
+      const errorMessage = form.querySelector('.error-message');
+      const sentMessage = form.querySelector('.sent-message');
+
+      loading.classList.add('d-block');
+      errorMessage.classList.remove('d-block');
+      sentMessage.classList.remove('d-block');
+
+      const formData = new FormData(form);
+
+      fetch('/', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => {
+          loading.classList.remove('d-block');
+          if (response.ok) {
+            sentMessage.classList.add('d-block');
+            form.reset();
+          } else {
+            return response.text().then(text => {
+              throw new Error(text);
+            });
+          }
+        })
+        .catch(error => {
+          loading.classList.remove('d-block');
+          errorMessage.innerHTML = "Something went wrong. Please try again.";
+          errorMessage.classList.add('d-block');
+        });
     });
-
-    // Handle Netlify response after redirect
-    if (window.location.search.includes('success')) {
-      form.querySelector('.loading').classList.remove('d-block');
-      form.querySelector('.sent-message').classList.add('d-block');
-    }
-
-    if (window.location.search.includes('error')) {
-      form.querySelector('.loading').classList.remove('d-block');
-      form.querySelector('.error-message').classList.add('d-block');
-    }
   });
 })();
+
