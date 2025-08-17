@@ -141,4 +141,24 @@
    */
   new PureCounter();
 
+  const tabs = document.querySelectorAll('.nav-link');
+const cards = document.querySelectorAll('.real-estate .col-xl-4');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', function(e) {
+    e.preventDefault();
+    tabs.forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+
+    const filter = this.dataset.filter;
+    cards.forEach(card => {
+      if(filter === 'all' || card.dataset.category === filter){
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
 })();

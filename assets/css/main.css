@@ -31,9 +31,9 @@
 :root {
   --nav-color: #000000;  /* The default color of the main navmenu links */
   --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-mobile-background-color: #000000; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #000000; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #F9B43B; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
@@ -146,6 +146,7 @@ h6 {
   color: var(--default-color);
   background: rgba(167, 144, 100, 0.4); 
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); 
   padding: 3px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -325,7 +326,7 @@ h6 {
 
   .navmenu {
     padding: 0;
-    z-index: 9997;
+    z-index:19997;
   }
 
   .navmenu ul {
@@ -428,6 +429,7 @@ h6 {
   .mobile-nav-active .navmenu {
     position: fixed;
     overflow: hidden;
+    height: 100vh; /* full screen */
     inset: 0;
     background: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
@@ -1130,6 +1132,16 @@ section,
   font-size: 0.6em;     /* smaller than the number */
   vertical-align: super; /* moves it up */
 }
+
+
+.stats .stats-item p {
+  padding: 0;
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 16px;
+
+}
+
 /*--------------------------------------------------------------
 # Features Section
 --------------------------------------------------------------*/
@@ -1729,8 +1741,17 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Properties Navigation Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.nav-pills .nav-link {
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--accent-color);
+  color: #fff;
 }
