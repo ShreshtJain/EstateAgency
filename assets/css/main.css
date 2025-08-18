@@ -622,7 +622,7 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.nav-pills .nav-link {
+.page-title .nav-pills .nav-link {
   border: 1px solid var(--accent-color);
   border-radius: 8px;
   margin: 5px;
@@ -630,7 +630,7 @@ h6 {
   color: #fff;
 }
 
-.nav-pills .nav-link.active {
+.page-title .nav-pills .nav-link.active {
   background-color: var(--accent-color);
   color: #fff;
 }
