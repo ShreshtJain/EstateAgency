@@ -142,7 +142,7 @@
   new PureCounter();
 
   const tabs = document.querySelectorAll('.nav-link');
-const cards = document.querySelectorAll('.real-estate .col-xl-4');
+  const cards = document.querySelectorAll('.real-estate .col-xl-4');
 
 tabs.forEach(tab => {
   tab.addEventListener('click', function(e) {
