@@ -86,52 +86,25 @@
     <section id="contact" class="contact section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.737381825663!2d78.56641797620861!3d25.44704207755096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3977772ba065dd1b%3A0x6c8d32e1a6872205!2sVSS%20HOUSING%20GROUP!5e0!3m2!1sen!2sin!4v1750925609604!5m2!1sen!2sin" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div><!-- End Google Maps -->
-
+        
         <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>Jankipuram Colony, Opposite-s. S. P. Bungalow, Civil Line, Jhansi-284001, Uttar Pradesh, India</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+91 9935531136</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-          <div class="col-lg-8">
-<form name="contact" method="POST" data-netlify="true" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-  <input type="hidden" name="form-name" value="contact">
+            <div class="col-lg-7">
+              <form name="contact" method="POST" data-netlify="true" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+                <input type="hidden" name="form-name" value="contact">
 
               <div class="row gy-4">
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                <div class="col-md-12">
+                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
                 </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                <div class="col-md-12">
+                  <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
                 </div>
 
                 <div class="col-md-12">
@@ -143,10 +116,9 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-   <div class="loading">Loading</div>
-<div class="error-message">Something went wrong. Please try again later.</div>
-<div class="sent-message">Your message has been sent. Thank you!</div>
-
+                  <div class="loading">Loading</div>
+                  <div class="error-message">Something went wrong. Please try again later.</div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
 
                   <button type="submit">Send Message</button>
                 </div>
@@ -154,6 +126,11 @@
               </div>
             </form>
           </div><!-- End Contact Form -->
+
+          <div class="col-lg-5 d-flex" data-aos="fade-up" data-aos-delay="200">
+                  <iframe style="border:0; width: 100%; height: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.737381825663!2d78.56641797620861!3d25.44704207755096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3977772ba065dd1b%3A0x6c8d32e1a6872205!2sVSS%20HOUSING%20GROUP!5e0!3m2!1sen!2sin!4v1750925609604!5m2!1sen!2sin" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <!-- End Google Maps -->
 
         </div>
 
