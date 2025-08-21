@@ -1451,8 +1451,7 @@ section,
 /* hover effect */
 .real-estate .card:hover{
   transform: translateY(-10px);
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
+  border-radius: 18px;
   border-bottom-color: var(--accent-color);
 }
 
