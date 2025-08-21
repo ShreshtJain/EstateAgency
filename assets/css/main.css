@@ -877,15 +877,13 @@ section,
   margin-bottom: 0;
 }
 
-@media (min-width: 1365px) {
-  .services .service-item:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
-  }
+.services .service-item:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+}
 
-  .services .service-item:hover h3 {
-    color: var(--accent-color);
-  }
+.services .service-item:hover h3 {
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -1449,6 +1447,18 @@ section,
   z-index: 2;
 }
 
+/* hover effect */
+.real-estate .card:hover,
+.real-estate .card:focus-within {
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 8px 25px var(--accent-color);
+}
+
+.real-estate .card:hover .card-body h3 {
+  color: var(--accent-color);
+}
+
 .real-estate .card img {
   position: absolute;
   inset: 0;
@@ -1489,30 +1499,6 @@ section,
 
 .real-estate .card .card-body h3 a {
   color: var(--contrast-color);
-}
-
-.real-estate .card .card-body .card-content {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  height: 80px;
-  visibility: hidden;
-  opacity: 0;
-  margin-top: 10px;
-  margin-bottom: -80px;
-  margin-left: -30px;
-  margin-right: -30px;
-  transition: 0.3s;
-  padding: 0 10px;
-}
-
-.real-estate .card .card-body .card-content .propery-info {
-  font-weight: 500;
-}
-
-.real-estate .card:hover .card-content {
-  margin-bottom: -30px;
-  visibility: visible;
-  opacity: 1;
 }
 
 /*--------------------------------------------------------------
