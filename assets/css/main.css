@@ -1432,9 +1432,10 @@ section,
 .real-estate .card {
   background-color: var(--background-color);
   color: var(--default-color);
-  border: none;
   position: relative;
   border-radius: 0px;
+  border-bottom: 5px solid var(--background-color);
+  transition: all 0.3s ease-in-out;
   overflow: hidden;
   min-height: 500px;
 }
@@ -1448,11 +1449,11 @@ section,
 }
 
 /* hover effect */
-.real-estate .card:hover,
-.real-estate .card:focus-within {
+.real-estate .card:hover{
   transform: translateY(-10px);
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 8px 25px var(--accent-color);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-bottom-color: var(--accent-color);
 }
 
 .real-estate .card:hover .card-body h3 {
