@@ -1611,6 +1611,10 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+.real-estate-2 .portfolio-description {
+  padding: 20px;
+}
+
 .real-estate-2 .portfolio-description h2 {
   font-size: 26px;
   font-weight: 700;
@@ -1619,6 +1623,25 @@ section,
 
 .real-estate-2 .portfolio-description p {
   padding: 0;
+}
+
+.real-estate-2 .portfolio-description .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.real-estate-2 .portfolio-description .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .real-estate-2 .portfolio-description .testimonial-item {
