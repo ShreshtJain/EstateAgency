@@ -842,7 +842,6 @@ section,
   border-radius: 18px;
   border-bottom: 5px solid var(--surface-color);
   height: 100%;
-
   display: flex;             /* enable flexbox */
   flex-direction: column;    /* keep icon above text */
   align-items: center;       /* horizontally center */
