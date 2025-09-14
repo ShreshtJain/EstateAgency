@@ -19,28 +19,28 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #1b1b1b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #2eca6a; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --background-color: #000000; /* Background color for the entire website, including individual sections */
+  --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #fdfdfd; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #F9B43B; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #212121; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #444444;  /* The default color of the main navmenu links */
-  --nav-hover-color: #000000; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #2eca6a; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #000000;  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #000000; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #000000; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #F9B43B; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #212121;
   --surface-color: #ffffff;
 }
 
@@ -144,20 +144,26 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 15px 0;
+  background: rgba(167, 144, 100, 0.4); 
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); 
+  padding: 3px 0;
   transition: all 0.5s;
   z-index: 997;
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 1);
 }
 
 .header .logo {
   line-height: 1;
 }
 
-.header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
+.header .logo img#logo1 {
+    max-height: 72px;
+}
+
+.header .logo img#logo2 {
+    max-height: 50px;
+    padding-top: 11px;
 }
 
 .header .logo h1 {
@@ -320,7 +326,7 @@ h6 {
 
   .navmenu {
     padding: 0;
-    z-index: 9997;
+    z-index:19997;
   }
 
   .navmenu ul {
@@ -423,6 +429,7 @@ h6 {
   .mobile-nav-active .navmenu {
     position: fixed;
     overflow: hidden;
+    height: 100vh; /* full screen */
     inset: 0;
     background: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
@@ -588,6 +595,12 @@ h6 {
 .page-title .heading h1 {
   font-size: 38px;
   font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.page-title .heading p {
+  font-size: 18px;           /* Adjust size as needed */
+  font-style: italic;        /* Keep the italic as in your HTML */
 }
 
 .page-title nav {
@@ -613,6 +626,19 @@ h6 {
   display: inline-block;
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.page-title .nav-pills .nav-link {
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.page-title .nav-pills .nav-link.active {
+  background-color: var(--accent-color);
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -652,6 +678,8 @@ section,
 
 .section-title p {
   margin-bottom: 0;
+  font-size: 20px;           /* Adjust size as needed */
+  font-style: italic;        /* Keep the italic as in your HTML */
 }
 
 /*--------------------------------------------------------------
@@ -809,11 +837,16 @@ section,
 .services .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
-  padding: 60px 30px;
+  padding: 30px 30px;
   transition: all ease-in-out 0.3s;
   border-radius: 18px;
   border-bottom: 5px solid var(--surface-color);
   height: 100%;
+
+  display: flex;             /* enable flexbox */
+  flex-direction: column;    /* keep icon above text */
+  align-items: center;       /* horizontally center */
+  text-align: center;        /* center text below icon */
 }
 
 .services .service-item .icon {
@@ -844,15 +877,13 @@ section,
   margin-bottom: 0;
 }
 
-@media (min-width: 1365px) {
-  .services .service-item:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
-  }
+.services .service-item:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+}
 
-  .services .service-item:hover h3 {
-    color: var(--accent-color);
-  }
+.services .service-item:hover h3 {
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -1094,6 +1125,12 @@ section,
   background-color: var(--surface-color);
   box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  border-radius: 18px;
+}
+
+.plusplus::after {
+  content: "+";
+  margin-left: 4px;
 }
 
 .stats .stats-item i {
@@ -1110,11 +1147,18 @@ section,
   font-weight: 600;
 }
 
+.plus-sign {
+  font-size: 0.6em;     /* smaller than the number */
+  vertical-align: super; /* moves it up */
+}
+
+
 .stats .stats-item p {
   padding: 0;
   margin: 0;
   font-family: var(--heading-font);
   font-size: 16px;
+
 }
 
 /*--------------------------------------------------------------
@@ -1337,42 +1381,13 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
 
 .contact .php-email-form {
   height: 100%;
 }
 
 .contact .php-email-form input[type=text],
+.contact .php-email-form input[type=tel],
 .contact .php-email-form input[type=email],
 .contact .php-email-form textarea {
   font-size: 14px;
@@ -1385,12 +1400,14 @@ section,
 }
 
 .contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=tel]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=tel]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
@@ -1415,9 +1432,10 @@ section,
 .real-estate .card {
   background-color: var(--background-color);
   color: var(--default-color);
-  border: none;
   position: relative;
   border-radius: 0px;
+  border-bottom: 5px solid var(--background-color);
+  transition: all 0.3s ease-in-out;
   overflow: hidden;
   min-height: 500px;
 }
@@ -1428,6 +1446,17 @@ section,
   inset: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 25%, rgba(0, 0, 0, 0.9) 75%);
   z-index: 2;
+}
+
+/* hover effect */
+.real-estate .card:hover{
+  transform: translateY(-10px);
+  border-radius: 18px;
+  border-bottom-color: var(--accent-color);
+}
+
+.real-estate .card:hover .card-body h3 {
+  color: var(--accent-color);
 }
 
 .real-estate .card img {
@@ -1470,30 +1499,6 @@ section,
 
 .real-estate .card .card-body h3 a {
   color: var(--contrast-color);
-}
-
-.real-estate .card .card-body .card-content {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  height: 80px;
-  visibility: hidden;
-  opacity: 0;
-  margin-top: 10px;
-  margin-bottom: -80px;
-  margin-left: -30px;
-  margin-right: -30px;
-  transition: 0.3s;
-  padding: 0 10px;
-}
-
-.real-estate .card .card-body .card-content .propery-info {
-  font-weight: 500;
-}
-
-.real-estate .card:hover .card-content {
-  margin-bottom: -30px;
-  visibility: visible;
-  opacity: 1;
 }
 
 /*--------------------------------------------------------------
@@ -1606,6 +1611,10 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+.real-estate-2 .portfolio-description {
+  padding: 20px;
+}
+
 .real-estate-2 .portfolio-description h2 {
   font-size: 26px;
   font-weight: 700;
@@ -1614,6 +1623,25 @@ section,
 
 .real-estate-2 .portfolio-description p {
   padding: 0;
+}
+
+.real-estate-2 .portfolio-description .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.real-estate-2 .portfolio-description .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .real-estate-2 .portfolio-description .testimonial-item {
@@ -1716,8 +1744,79 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# FAQ Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.faq-section .service-box {
+  background-color: var(--surface-color);
+  padding: 20px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section .service-box+.service-box {
+  margin-top: 30px;
+}
+
+.faq-section .accordion.accordion-flush {
+  background-color: var(--surface-color);
+}
+
+.faq-section .accordion-item {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--background-color), transparent 96%);
+  align-items: center;
+  padding: 0px 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+  border: none;
+  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.5);
+}
+/* Closed FAQ state */
+.faq-section .accordion-button {
+  color: var(--contrast-color);
+  background-color: var(--surface-color);
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  box-shadow: none;
+  font-size: 16px;
+  border: none;
+  font-weight: 500;
+}
+
+/* Active/open FAQ state */
+.faq-section .accordion-button:not(.collapsed) {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  box-shadow: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Accordion arrow color - collapsed (accent color) */
+.faq-section .accordion-button::after {
+  filter: invert(48%) sepia(93%) saturate(751%) hue-rotate(10deg) brightness(95%) contrast(92%);
+}
+
+/* Accordion arrow color - expanded (contrast color) */
+.faq-section .accordion-button:not(.collapsed)::after {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(359deg) brightness(100%) contrast(100%);
+}
+
+
+.faq-section .accordion-item:first-child .accordion-button {
+  margin-top: 0;
+}
+
+/* Accordion body style */
+.faq-section .accordion-body {
+  padding: 12px 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  background-color: var(--surface-color);
+  border-left: 2px solid var(--accent-color);
+  margin-top: 5px;
+  border-radius: 0 0 4px 4px;
+}
+
+.faq-section .accordion-button:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  color: var(--accent-color);
 }
