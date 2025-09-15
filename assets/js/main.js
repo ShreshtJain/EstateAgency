@@ -161,4 +161,21 @@ tabs.forEach(tab => {
   });
 });
 
+  /**
+   * Logo for Seach Engine
+   */
+document.addEventListener('DOMContentLoaded', () => {
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VSS Housing",
+    "url": "https://vsshousing.in",
+    "logo": "https://vsshousing.in/assets/img/android-chrome-512x512.png"
+  });
+
+  document.head.appendChild(script);
+});
+
 })();
